@@ -1,0 +1,15 @@
+entity\InfoEntity.class
+entity\Phone.class
+entity\CityInfo.class
+entity\Person.class
+entity\CityInfo_.class
+entity\Person_.class
+entity\Hobby.class
+entity\Hobby_.class
+jpa\Structure.class
+entity\Adress.class
+entity\InfoEntity_.class
+entity\Adress_.class
+entity\Phone_.class
+entity\Company_.class
+entity\Company.class
