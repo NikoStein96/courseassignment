@@ -54,6 +54,38 @@ public class Adress implements Serializable {
         return true;
     }
 
+    public String getStreet() {
+        return street;
+    }
+
+    public void setStreet(String street) {
+        this.street = street;
+    }
+
+    public String getAdditionalInfo() {
+        return additionalInfo;
+    }
+
+    public void setAdditionalInfo(String additionalInfo) {
+        this.additionalInfo = additionalInfo;
+    }
+
+    public List<InfoEntity> getEntities() {
+        return entities;
+    }
+
+    public void setEntities(List<InfoEntity> entities) {
+        this.entities = entities;
+    }
+
+    public CityInfo getcInfo() {
+        return cInfo;
+    }
+
+    public void setcInfo(CityInfo cInfo) {
+        this.cInfo = cInfo;
+    }
+
     @Override
     public String toString() {
         return "entity.Adress[ id=" + id + " ]";

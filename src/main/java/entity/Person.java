@@ -14,6 +14,14 @@ import javax.persistence.ManyToMany;
 @Entity
 public class Person extends InfoEntity implements Serializable {
 
+    public List<Hobby> getHobbier() {
+        return hobbier;
+    }
+
+    public void setHobbier(List<Hobby> hobbier) {
+        this.hobbier = hobbier;
+    }
+
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

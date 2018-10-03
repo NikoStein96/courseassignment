@@ -30,6 +30,22 @@ public class InfoEntity implements Serializable {
         return id;
     }
 
+    public List<Phone> getPhones() {
+        return phones;
+    }
+
+    public void setPhones(List<Phone> phones) {
+        this.phones = phones;
+    }
+
+    public Adress getAdress() {
+        return adress;
+    }
+
+    public void setAdress(Adress adress) {
+        this.adress = adress;
+    }
+
     public void setId(Long id) {
         this.id = id;
     }

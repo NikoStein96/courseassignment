@@ -1,8 +1,15 @@
+C:\Users\Sebastian\Documents\NetBeansProjects\courseassignment\src\main\java\DTO\PersonDTO.java
 C:\Users\Sebastian\Documents\NetBeansProjects\courseassignment\src\main\java\entity\InfoEntity.java
 C:\Users\Sebastian\Documents\NetBeansProjects\courseassignment\src\main\java\entity\Company.java
 C:\Users\Sebastian\Documents\NetBeansProjects\courseassignment\src\main\java\entity\CityInfo.java
-C:\Users\Sebastian\Documents\NetBeansProjects\courseassignment\src\main\java\entity\Adress.java
 C:\Users\Sebastian\Documents\NetBeansProjects\courseassignment\src\main\java\entity\Hobby.java
 C:\Users\Sebastian\Documents\NetBeansProjects\courseassignment\src\main\java\entity\Phone.java
-C:\Users\Sebastian\Documents\NetBeansProjects\courseassignment\src\main\java\entity\Person.java
+C:\Users\Sebastian\Documents\NetBeansProjects\courseassignment\src\main\java\DTO\HobbyDTO.java
+C:\Users\Sebastian\Documents\NetBeansProjects\courseassignment\src\main\java\DTO\InfoEntityDTO.java
 C:\Users\Sebastian\Documents\NetBeansProjects\courseassignment\src\main\java\jpa\Structure.java
+C:\Users\Sebastian\Documents\NetBeansProjects\courseassignment\src\main\java\DTO\CityInfoDTO.java
+C:\Users\Sebastian\Documents\NetBeansProjects\courseassignment\src\main\java\DTO\PhoneDTO.java
+C:\Users\Sebastian\Documents\NetBeansProjects\courseassignment\src\main\java\DTO\CompanyDTO.java
+C:\Users\Sebastian\Documents\NetBeansProjects\courseassignment\src\main\java\entity\Adress.java
+C:\Users\Sebastian\Documents\NetBeansProjects\courseassignment\src\main\java\DTO\AddressDTO.java
+C:\Users\Sebastian\Documents\NetBeansProjects\courseassignment\src\main\java\entity\Person.java

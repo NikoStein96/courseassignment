@@ -51,6 +51,30 @@ public class CityInfo implements Serializable {
         return true;
     }
 
+    public int getZipCode() {
+        return zipCode;
+    }
+
+    public void setZipCode(int zipCode) {
+        this.zipCode = zipCode;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public List<Adress> getAddress() {
+        return address;
+    }
+
+    public void setAddress(List<Adress> address) {
+        this.address = address;
+    }
+
     @Override
     public String toString() {
         return "entity.CityInfo[ id=" + id + " ]";
