@@ -1,20 +1,24 @@
-<<<<<<< HEAD
+DTO\CityInfoDTO.class
 entity\InfoEntity.class
 entity\Phone.class
-jpa\Facade.class
-entity\CityInfo.class
-entity\Person.class
+DTO\HobbyDTO.class
 entity\CityInfo_.class
-entity\Person_.class
-entity\Hobby.class
-entity\Hobby_.class
 jpa\Structure.class
 entity\Adress.class
-jpa\FacadeTest.class
+DTO\PhoneDTO.class
 entity\InfoEntity_.class
 entity\Adress_.class
 entity\Phone_.class
+DTO\InfoEntityDTO.class
+DTO\CompanyDTO.class
+jpa\Facade.class
+entity\CityInfo.class
+entity\Person.class
+entity\Person_.class
+entity\Hobby.class
+entity\Hobby_.class
+jpa\FacadeTest.class
+DTO\AddressDTO.class
 entity\Company_.class
+DTO\PersonDTO.class
 entity\Company.class
-=======
->>>>>>> 6deb97c721d4492e49b2ea254be55fcfeee841bc
