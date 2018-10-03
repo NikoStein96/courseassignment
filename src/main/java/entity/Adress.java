@@ -15,7 +15,7 @@ public class Adress implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String street;
     private String additionalInfo;
@@ -52,6 +52,38 @@ public class Adress implements Serializable {
             return false;
         }
         return true;
+    }
+
+    public String getStreet() {
+        return street;
+    }
+
+    public void setStreet(String street) {
+        this.street = street;
+    }
+
+    public String getAdditionalInfo() {
+        return additionalInfo;
+    }
+
+    public void setAdditionalInfo(String additionalInfo) {
+        this.additionalInfo = additionalInfo;
+    }
+
+    public List<InfoEntity> getEntities() {
+        return entities;
+    }
+
+    public void setEntities(List<InfoEntity> entities) {
+        this.entities = entities;
+    }
+
+    public CityInfo getcInfo() {
+        return cInfo;
+    }
+
+    public void setcInfo(CityInfo cInfo) {
+        this.cInfo = cInfo;
     }
 
     @Override

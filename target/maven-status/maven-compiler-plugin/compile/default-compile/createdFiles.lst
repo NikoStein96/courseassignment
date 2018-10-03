@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 entity\InfoEntity.class
 entity\Phone.class
 jpa\Facade.class
@@ -15,3 +16,5 @@ entity\Adress_.class
 entity\Phone_.class
 entity\Company_.class
 entity\Company.class
+=======
+>>>>>>> 6deb97c721d4492e49b2ea254be55fcfeee841bc

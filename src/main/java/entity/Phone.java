@@ -13,7 +13,7 @@ public class Phone implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
     private int number;
@@ -23,6 +23,30 @@ public class Phone implements Serializable {
 
     public Long getId() {
         return id;
+    }
+
+    public int getNumber() {
+        return number;
+    }
+
+    public void setNumber(int number) {
+        this.number = number;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public InfoEntity getEntity() {
+        return entity;
+    }
+
+    public void setEntity(InfoEntity entity) {
+        this.entity = entity;
     }
 
     public void setId(Long id) {

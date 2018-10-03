@@ -65,7 +65,7 @@ public class Facade {
         List<Person> p = null;
         try {
         em.getTransaction().begin();
-        Query query = em.createQuery("Select p from Person p Where p.adress. = :zipCode");
+        Query query = em.createQuery("Select p from Person p Where p = :zipCode");
         //Query query = em.createQuery("Select ie from InfoEntity ie WHERE TYPE(ie) = Person and ie.adress.cInfo.zipCode = :zipCode");
         query.setParameter("zipCode", zipCode);
         p = query.getResultList();

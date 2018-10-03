@@ -26,6 +26,14 @@ public class Hobby implements Serializable {
         return id;
     }
 
+    public List<Person> getPersons() {
+        return persons;
+    }
+
+    public void setPersons(List<Person> persons) {
+        this.persons = persons;
+    }
+
     public void setId(Long id) {
         this.id = id;
     }

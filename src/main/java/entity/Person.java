@@ -7,12 +7,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
 import javax.persistence.ManyToMany;
 
 @Entity
 public class Person extends InfoEntity implements Serializable {
+
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -58,6 +57,13 @@ public class Person extends InfoEntity implements Serializable {
         this.lastName = lastName;
     }
     
+    public List<Hobby> getHobbier() {
+        return hobbier;
+    }
+
+    public void setHobbier(List<Hobby> hobbier) {
+        this.hobbier = hobbier;
+    }
     
 
     @Override
