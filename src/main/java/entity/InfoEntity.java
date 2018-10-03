@@ -26,6 +26,13 @@ public class InfoEntity implements Serializable {
     @ManyToOne(cascade = CascadeType.ALL)
     private Adress adress;
 
+    public InfoEntity() {
+    }
+
+    public InfoEntity(String email) {
+        this.email = email;
+    }
+
     public Long getId() {
         return id;
     }

@@ -25,6 +25,15 @@ public class Person extends InfoEntity implements Serializable {
     @ManyToMany(cascade = CascadeType.ALL)
     private List<Hobby> hobbier;
 
+    public Person() {
+    }
+
+    public Person(String firstName, String lastName, String email) {
+        super(email);
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
     public Long getId() {
         return id;
     }
@@ -73,7 +82,7 @@ public class Person extends InfoEntity implements Serializable {
 
     @Override
     public String toString() {
-        return "entity.Person[ id=" + id + " ]";
+        return "Person{" + "id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", hobbier=" + hobbier + '}';
     }
     
 }
