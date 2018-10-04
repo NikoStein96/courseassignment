@@ -4,6 +4,7 @@ import DTO.PersonDTO;
 import entity.CityInfo;
 import entity.Company;
 import entity.Person;
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -35,9 +36,10 @@ public class FacadePerson {
     
     
     
-    public List<Person> getPersonsByHobby(String hobby) {
+    public List<PersonDTO> getPersonsByHobby(String hobby) {
         EntityManager em = emf.createEntityManager();
         List<Person> p = null;
+        List<PersonDTO> listDTO = new ArrayList();
         try {
         em.getTransaction().begin();
         Query query = em.createQuery("Select p from Person p WHERE p.hobbier.name = :hobby");
@@ -47,12 +49,17 @@ public class FacadePerson {
         } finally {
             em.close();
         }
-        return p;
+        for (Person person : p) {
+            PersonDTO pDTO = new PersonDTO(person);
+            listDTO.add(pDTO);
+        }
+        return listDTO;
     }
     
-    public List<Person> getPersonByCity(int zipCode) {
+    public List<PersonDTO> getPersonByCity(int zipCode) {
         EntityManager em = emf.createEntityManager();
         List<Person> p = null;
+        List<PersonDTO> listDTO = new ArrayList();
         try {
         em.getTransaction().begin();
         Query query = em.createQuery("Select p from Person p Where p.adress.cInfo.zipcode = :zipCode");
@@ -63,7 +70,11 @@ public class FacadePerson {
         } finally {
             em.close();
         }
-        return p;
+        for (Person person : p) {
+            PersonDTO pDTO = new PersonDTO(person);
+            listDTO.add(pDTO);
+        }
+        return listDTO;
     }
     
     public int getHobbySizeByHobby(String hobby) {
