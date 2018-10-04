@@ -17,7 +17,7 @@ import javax.ws.rs.core.Response;
 
 @Path("city")
 public class CityResource {
-    private static FacadeCity f = new FacadeCity(Persistence.createEntityManagerFactory("CourseAssignment"));
+    private static FacadeCity f = new FacadeCity(Persistence.createEntityManagerFactory("courseassignment"));
     Gson gson = new GsonBuilder().setPrettyPrinting().create();
     @Context
     private UriInfo context;

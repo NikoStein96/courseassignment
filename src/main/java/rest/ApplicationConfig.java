@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package rest;
 
 import java.util.Set;
@@ -22,6 +17,7 @@ public class ApplicationConfig extends Application {
         resources.add(rest.CityResource.class);
         resources.add(rest.CompanyResource.class);
         resources.add(rest.PersonResource.class);
+        resources.add(rest.TestResource.class);
     }
     
 }

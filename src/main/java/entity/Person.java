@@ -88,7 +88,7 @@ public class Person extends InfoEntity implements Serializable {
 
     @Override
     public String toString() {
-        return "Person{" + "id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", hobbier=" + hobbier + '}';
+        return "Person: " + "id: " + id + ", firstName: " + firstName + ", lastName: " + lastName + ", hobbier: " + hobbier;
     }
     
 }

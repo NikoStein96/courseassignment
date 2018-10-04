@@ -24,6 +24,7 @@ entity\Person_.class
 entity\Hobby.class
 entity\Hobby_.class
 rest\PersonResource.class
+rest\TestResource.class
 DTO\AddressDTO.class
 entity\Company_.class
 Facade\FacadeTest.class

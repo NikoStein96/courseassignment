@@ -107,7 +107,7 @@ public class Company extends InfoEntity implements Serializable {
 
     @Override
     public String toString() {
-        return "Company{" + "id=" + id + ", name=" + name + ", description=" + description + ", cvr=" + cvr + ", numEmployees=" + numEmployees + ", marketValue=" + marketValue + '}';
+        return "Company: " + "id: " + id + ", name: " + name + ", description: " + description + ", cvr: " + cvr + ", numEmployees: " + numEmployees + ", marketValue: " + marketValue;
     }
 
     

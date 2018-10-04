@@ -15,7 +15,7 @@ import javax.ws.rs.core.Response;
 
 @Path("Company")
 public class CompanyResource {
-    private static FacadeCompany f = new FacadeCompany(Persistence.createEntityManagerFactory("CourseAssignment"));
+    private static FacadeCompany f = new FacadeCompany(Persistence.createEntityManagerFactory("courseassignment"));
     Gson gson = new GsonBuilder().setPrettyPrinting().create();
     @Context
     private UriInfo context;
@@ -31,7 +31,7 @@ public class CompanyResource {
     }
     
         @GET
-    @Path("/byphhone/{employeesNumber}")
+    @Path("/byemployees/{employeesNumber}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getCompanyByEmpl(@PathParam("employeesNumber") int employeesNumber) {
        return Response.ok().entity(gson.toJson(f.getCompanyByEmployees(employeesNumber))).build();

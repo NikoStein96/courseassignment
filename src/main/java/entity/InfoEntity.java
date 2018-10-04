@@ -89,6 +89,8 @@ public class InfoEntity implements Serializable {
 
     @Override
     public String toString() {
-        return "InfoEntity{" + "id=" + id + ", email=" + email + ", phones=" + phones + ", adress=" + adress + '}';
+        return "InfoEntity: " + "id: " + id + ", email: " + email + ", phones: " + phones + ", adress: " + adress;
     }
+
+    
 }

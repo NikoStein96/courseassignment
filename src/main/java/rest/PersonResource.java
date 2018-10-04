@@ -17,7 +17,8 @@ import javax.ws.rs.core.Response;
 
 @Path("person")
 public class PersonResource {
-    private static FacadePerson f = new FacadePerson(Persistence.createEntityManagerFactory("CourseAssignment"));
+
+    private static FacadePerson f = new FacadePerson(Persistence.createEntityManagerFactory("courseassignment"));
     Gson gson = new GsonBuilder().setPrettyPrinting().create();
     @Context
     private UriInfo context;
@@ -29,22 +30,25 @@ public class PersonResource {
     @Path("/byphhone/{phnonenr}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getByPhonenr(@PathParam("phnonenr") int phonenr) {
-       return Response.ok().entity(gson.toJson(f.getPersonInformation(phonenr))).build();
+        return Response.ok().entity(gson.toJson(f.getPersonInformation(phonenr))).build();
     }
-        @GET
+
+    @GET
     @Path("/byhobby/{hobby}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getByhobby(@PathParam("hobby") String hobby) {
         return Response.ok().entity(gson.toJson(f.getPersonsByHobby(hobby))).build();
     }
-            @GET
+
+    @GET
     @Path("/bycity/{zip}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getByhobby(@PathParam("zip") int zip) {
-       return Response.ok().entity(gson.toJson(f.getPersonByCity(zip))).build();
+        return Response.ok().entity(gson.toJson(f.getPersonByCity(zip))).build();
     }
-            @GET
-    @Path("/byhobby/{hobby}")
+
+    @GET
+    @Path("/hobbysize/{hobby}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response gethobbysize(@PathParam("hobby") String hobby) {
         return Response.ok().entity(gson.toJson(f.getHobbySizeByHobby(hobby))).build();
