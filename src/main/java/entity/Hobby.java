@@ -78,7 +78,9 @@ public class Hobby implements Serializable {
 
     @Override
     public String toString() {
-        return "entity.Hobby[ id=" + id + " ]";
+        return "Hobby: " + "id: " + id + ", name: " + name + ", description: " + description + ", persons: " + persons;
     }
+
+    
     
 }

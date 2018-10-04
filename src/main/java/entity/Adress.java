@@ -88,7 +88,9 @@ public class Adress implements Serializable {
 
     @Override
     public String toString() {
-        return "entity.Adress[ id=" + id + " ]";
+        return "Adress: " + "id: " + id + ", street: " + street + ", additionalInfo: " + additionalInfo + ", entities: " + entities + ", cInfo: " + cInfo;
     }
+
+    
     
 }
