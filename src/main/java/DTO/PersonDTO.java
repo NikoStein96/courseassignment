@@ -15,9 +15,8 @@ public class PersonDTO {
         this.firstName = person.getFirstName();
         this.lastName = person.getLastName();
         for (Hobby o : person.getHobbier()) {
-            this.hobbyer = o.getName();
+            this.hobbyer = o.toString();
         }
-
     }
 
     public PersonDTO(Long id, String firstName, String lastName, String hobbyer) {

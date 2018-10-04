@@ -1,10 +1,7 @@
 package DTO;
 
 import entity.Adress;
-import entity.CityInfo;
 import entity.InfoEntity;
-import java.util.Collection;
-import java.util.List;
 
 public class AddressDTO {
 
@@ -19,9 +16,9 @@ public class AddressDTO {
         this.additionalInfo = adress.getAdditionalInfo();
         this.IE = adress.getEntities().toString();
         for (InfoEntity o : adress.getEntities()) {
-            this.IE = o.getEmail();
+            this.IE = o.toString();
         }
-        this.cityInfo = adress.getcInfo().getCity();
+        this.cityInfo = adress.getcInfo().toString();
     }
 
     public AddressDTO(long id, String street, String additionalInfo, String IE, String cityInfo) {

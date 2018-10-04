@@ -1,5 +1,6 @@
 package Facade;
 
+import DTO.PersonDTO;
 import entity.CityInfo;
 import entity.Company;
 import entity.Person;
@@ -16,7 +17,7 @@ public class FacadePerson {
         this.emf = emf;
     }
 
-    public Person getPersonInformation(int phoneNumber) {
+    public PersonDTO getPersonInformation(int phoneNumber) {
         EntityManager em = emf.createEntityManager();
         Person p = null;
         try {
@@ -28,7 +29,8 @@ public class FacadePerson {
         } finally {
             em.close();
         }
-        return p;
+        PersonDTO pDTO = new PersonDTO(p);
+        return pDTO;
     }
     
     

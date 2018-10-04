@@ -16,7 +16,7 @@ public class InfoEntityDTO {
             this.phone = o.getNumber();
         }
 
-        this.adress = infoentity.getAdress().getStreet();
+        this.adress = infoentity.getAdress().toString();
     }
 
     public InfoEntityDTO(long id, String email, int phone, String adress) {

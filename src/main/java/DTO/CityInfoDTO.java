@@ -15,7 +15,7 @@ public class CityInfoDTO {
         this.zipCode = cityinfo.getZipCode();
         this.city = cityinfo.getCity();
         for (Adress o : cityinfo.getAddress()) {
-            this.Address = o.getStreet();
+            this.Address = o.toString();
         }
 
     }
