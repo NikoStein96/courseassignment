@@ -1,6 +1,8 @@
 package Facade;
 
+import DTO.CityInfoDTO;
 import entity.CityInfo;
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -13,9 +15,10 @@ public class FacadeCity {
         this.emf = emf;
     }
 
-    public List<CityInfo> danishZipcodes() {
+    public List<CityInfoDTO> danishZipcodes() {
         EntityManager em = emf.createEntityManager();
         List<CityInfo> danishZip = null;
+        List<CityInfoDTO> listDTO = new ArrayList();
         try {
         em.getTransaction().begin();
         Query query = em.createQuery("Select z from CityInfo z WHERE z.zipCode BETWEEN 1000 and 9999");
@@ -24,6 +27,10 @@ public class FacadeCity {
         } finally {
             em.close();
         }
-        return danishZip;
+        for (CityInfo c : danishZip) {
+            CityInfoDTO cDTO = new CityInfoDTO(c);
+            listDTO.add(cDTO);
+        }
+        return listDTO;
     }
 }

@@ -2,7 +2,6 @@ package DTO;
 
 import entity.Adress;
 import entity.CityInfo;
-import static entity.InfoEntity_.adress;
 
 public class CityInfoDTO {
 
