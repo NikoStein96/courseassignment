@@ -56,6 +56,7 @@ public class FacadePerson {
         try {
         em.getTransaction().begin();
         Query query = em.createQuery("Select p from Person p Where p.adress.cInfo.zipcode = :zipCode");
+
         query.setParameter("zipCode", zipCode);
         p = query.getResultList();
         em.getTransaction().commit();
