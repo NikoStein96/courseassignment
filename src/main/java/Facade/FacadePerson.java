@@ -1,8 +1,6 @@
 package Facade;
 
 import DTO.PersonDTO;
-import entity.CityInfo;
-import entity.Company;
 import entity.Person;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,6 +14,25 @@ public class FacadePerson {
 
     public FacadePerson(EntityManagerFactory emf) {
         this.emf = emf;
+    }
+    
+    
+    public List<PersonDTO> getAllPersons() {
+        EntityManager em = emf.createEntityManager();
+        List<Person> p = null;
+        List<PersonDTO> listDTO = new ArrayList();
+        try {
+        em.getTransaction().begin();
+        Query query = em.createQuery("Select p from Person p");
+        p = query.getResultList();
+        em.getTransaction().commit();
+        } finally {
+            em.close();
+        }
+        for (Person person : p) {
+            PersonDTO pDTO = new PersonDTO(person); 
+        }
+        return listDTO;
     }
 
     public PersonDTO getPersonInformation(int phoneNumber) {
@@ -90,6 +107,70 @@ public class FacadePerson {
             em.close();
         }
         return hobbySize;
+    }
+    
+    public PersonDTO createPerson(Person p) {
+        EntityManager em = emf.createEntityManager();
+        PersonDTO pDTO = null;
+        try {
+        em.getTransaction().begin();
+        Person person = new Person(p.getFirstName(), p.getLastName());
+        em.persist(person);
+        pDTO = new PersonDTO(person);
+        em.getTransaction().commit();
+        } finally {
+            em.close();
+        }
+        return pDTO;
+    }
+    
+    public PersonDTO deletePerson(long id) {
+        EntityManager em = emf.createEntityManager();
+        PersonDTO pDTO = null;
+        try {
+        em.getTransaction().begin();
+        Person p = em.find(Person.class, id);
+        em.remove(p);
+        pDTO = new PersonDTO(p);
+        em.getTransaction().commit();
+        } finally {
+            em.close();
+        }
+        return pDTO;
+    }
+    
+    public PersonDTO updatePerson(long id, Person newPerson) {
+        EntityManager em = emf.createEntityManager();
+        PersonDTO pDTO = null;
+        try {
+        em.getTransaction().begin();
+        Person p = em.find(Person.class, id);
+        p.setAdress(newPerson.getAdress());
+        p.setEmail(newPerson.getEmail());
+        p.setFirstName(newPerson.getFirstName());
+        p.setHobbier(newPerson.getHobbier());
+        p.setLastName(newPerson.getLastName());
+        p.setPhones(newPerson.getPhones());
+        pDTO = new PersonDTO(p);
+        em.getTransaction().commit();
+        } finally {
+            em.close();
+        }
+        return pDTO;
+    }
+    
+    public Person getPersonById(long id) {
+        EntityManager em = emf.createEntityManager();
+        Person p = null;
+        try {
+        em.getTransaction().begin();
+        p = em.find(Person.class, id);
+        em.persist(p);
+        em.getTransaction().commit();
+        } finally {
+            em.close();
+        }
+        return p;
     }
     
 }

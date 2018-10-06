@@ -22,6 +22,12 @@ public class Hobby implements Serializable {
     @ManyToMany(mappedBy = "hobbier")
     private List<Person> persons;
 
+    public Hobby(String name, String description) {
+        this.name = name;
+        this.description = description;
+    }
+    
+
     public Long getId() {
         return id;
     }
