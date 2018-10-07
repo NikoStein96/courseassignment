@@ -15,7 +15,7 @@ const fetchGeneral = (url, cb) => {
 document.getElementById("search").addEventListener("click", function (){
     const choise = document.getElementById("choise").value;
     //console.log(choise);
-    fetchGeneral('http://localhost:8084/api/test', json => {
+    fetchGeneral('http://localhost:8084/CourseAssignment/api/' + choise, json => {
 	console.log(json);
 });
     
