@@ -12,19 +12,24 @@
         <img src="logo.PNG" alt="Flowers in Chania" id="logo"><br>
         <div id="form">
         <form>
-            <select name="cars">
-                <option value="danishzips">få alle danske post numre</option>
-                <option value="byphhone">få information om firma med deres telefon nr</option>
-                <option value="byemployees">få information om firmaer der har x antal ansatte</option>
-                <option value="byphhone">få information om person ud fra deres telefon nr</option>
-                <option value="byhobby">få informationer om personer ud fra deres hobby</option>
-                <option value="bycity">få informationer om personer fra et postnr</option>
-                <option value="hobbysize">find uf af hvor mange der har en given hobby</option>
+            <select name="func" id="choise" >
+                <option value="city/danishzips">få alle danske post numre</option>
+                <option value="company/bycphhone">få information om firma med deres telefon nr</option>
+                <option value="company/byemployees">få information om firmaer der har x antal ansatte</option>
+                <option value="person/byphhone">få information om person ud fra deres telefon nr</option>
+                <option value="person/byhobby">få informationer om personer ud fra deres hobby</option>
+                <option value="person/bycity">få informationer om personer fra et postnr</option>
+                <option value="person/hobbysize">find uf af hvor mange der har en given hobby</option>
+                <option value="test">test</option>
             </select>
             <input type="text">
-            <input type="submit">
+            <input type="submit" id="search">
 
         </form>
+        </div>
+            <div id="fetcheddata"> 
+            
             </div>
+        <script src="app.js"></script>
     </body>
 </html>

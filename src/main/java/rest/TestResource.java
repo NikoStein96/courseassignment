@@ -13,6 +13,7 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PUT;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 
 /**
  * REST Web Service
@@ -35,11 +36,16 @@ public class TestResource {
      * Retrieves representation of an instance of rest.TestResource
      * @return an instance of java.lang.String
      */
-    @GET
+@GET
+   // @Path("allowed")
     @Produces(MediaType.APPLICATION_JSON)
-    public String getJson() {
-        //TODO return proper representation object
-        return "[]";
+    public Response getAllowedCORS()
+    {
+        return Response
+            .ok("{\"success\":true}")
+            .header("Access-Control-Allow-Origin", "*")
+            .header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE")
+            .build();
     }
 
     /**
