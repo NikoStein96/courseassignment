@@ -27,6 +27,11 @@ public class Person extends InfoEntity implements Serializable {
     public Person() {
     }
 
+    public Person(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
     public Person(String firstName, String lastName, String email) {
         super(email);
         this.firstName = firstName;
@@ -63,6 +68,10 @@ public class Person extends InfoEntity implements Serializable {
 
     public void setHobbier(List<Hobby> hobbier) {
         this.hobbier = hobbier;
+    }
+    
+    public void addHobbier(Hobby hobby) {
+        this.hobbier.add(hobby);
     }
     
 
