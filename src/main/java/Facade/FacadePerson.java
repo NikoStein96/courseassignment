@@ -1,6 +1,7 @@
 package Facade;
 
 import DTO.PersonDTO;
+import Exceptions.PersonNotFoundException;
 import entity.Person;
 import java.util.ArrayList;
 import java.util.List;
@@ -141,12 +142,12 @@ public class FacadePerson {
         try {
             em.getTransaction().begin();
             Person p = em.find(Person.class, id);
-            p.setAdress(newPerson.getAdress());
-            p.setEmail(newPerson.getEmail());
+            //p.setAdress(newPerson.getAdress());
+            //p.setEmail(newPerson.getEmail());
             p.setFirstName(newPerson.getFirstName());
-            p.setHobbier(newPerson.getHobbier());
+            //p.setHobbier(newPerson.getHobbier());
             p.setLastName(newPerson.getLastName());
-            p.setPhones(newPerson.getPhones());
+            //p.setPhones(newPerson.getPhones());
             pDTO = new PersonDTO(p);
             em.getTransaction().commit();
         } finally {
@@ -155,18 +156,23 @@ public class FacadePerson {
         return pDTO;
     }
 
-    public Person getPersonById(long id) {
+    public PersonDTO getPersonById(long id) throws PersonNotFoundException {
         EntityManager em = emf.createEntityManager();
         Person p = null;
+        PersonDTO pDTO = null;
         try {
             em.getTransaction().begin();
             p = em.find(Person.class, id);
+            if(p == null) {
+            throw new PersonNotFoundException("Person doesn't exist..");
+            }
             em.persist(p);
+            pDTO = new PersonDTO(p);
             em.getTransaction().commit();
         } finally {
             em.close();
         }
-        return p;
+        return pDTO;
     }
 
 }

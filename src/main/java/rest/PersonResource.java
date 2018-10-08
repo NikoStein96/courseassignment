@@ -5,6 +5,7 @@ import Facade.FacadePerson;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import entity.Person;
+import Exceptions.PersonNotFoundException;
 import javax.persistence.Persistence;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.UriInfo;
@@ -35,6 +36,27 @@ public class PersonResource {
     @Produces(MediaType.APPLICATION_JSON)
     public Response getByPhonenr(@PathParam("phnonenr") int phonenr) {
         return Response.ok().entity(gson.toJson(f.getPersonInformation(phonenr))).build();
+    }
+    
+    @GET
+    @Path("/getAllPersons")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getAllPersons() {
+        return Response.ok().entity(gson.toJson(f.getAllPersons())).build();
+    }
+    
+    @GET
+    @Path("/exception")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getTest() throws PersonNotFoundException {
+        throw new PersonNotFoundException("dette er en test");
+    }
+    
+    @GET
+    @Path("/getPersonById/{id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getPerson(@PathParam("id") long id) throws PersonNotFoundException  {
+        return Response.ok().entity(gson.toJson(f.getPersonById(id))).build();
     }
 
     @GET
