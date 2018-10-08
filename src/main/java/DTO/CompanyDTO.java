@@ -1,6 +1,7 @@
 package DTO;
 
 import entity.Company;
+import java.util.List;
 
 public class CompanyDTO {
 

@@ -1,9 +1,8 @@
 package Facade;
 
-import DTO.PersonDTO;
+import DTO.CompanyDTO;
 import entity.Company;
-import entity.Hobby;
-import entity.Person;
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -17,39 +16,47 @@ public class FacadeCompany {
         this.emf = emf;
     }
     
-    public Company getCompanyInformation(int phoneNumber) {
+    public CompanyDTO getCompanyInformation(int phoneNumber) {
         EntityManager em = emf.createEntityManager();
         Company c = null;
+        CompanyDTO cDTO = null;
         try {
         em.getTransaction().begin();
-        Query query = em.createQuery("Select p from Company p WHERE p.phones.number = :phoneNumber");
+        Query query = em.createQuery("Select ie From InfoEntity ie INNER JOIN ie.phones p where p.number= :phoneNumber");
         query.setParameter("phoneNumber",phoneNumber);
         c = (Company) query.getSingleResult();
+        cDTO = new CompanyDTO(c);
         em.getTransaction().commit();
         } finally {
             em.close();
         }
-        return c;
+        return cDTO;
     }
     
-    public List<Company> getCompanyByEmployees(int employeesNumber) {
+    public List<CompanyDTO> getCompanyByEmployees(int employeesNumber) {
         EntityManager em = emf.createEntityManager();
-        List<Company> c = null;
+        List<Company> companyList = null;
+        List<CompanyDTO> dtoList = new ArrayList();
         try {
         em.getTransaction().begin();
-        Query query = em.createQuery("Select p from Company p WHERE p.numEmployees >= :employeesNumber");
+        Query query = em.createQuery("Select c from Company c WHERE c.numEmployees >= :employeesNumber");
         query.setParameter("employeesNumber",employeesNumber);
-        c = query.getResultList();
+        companyList = query.getResultList();
         em.getTransaction().commit();
+        for (Company company : companyList) {
+            CompanyDTO cDTO = new CompanyDTO(company);
+            dtoList.add(cDTO);
+        }
         } finally {
             em.close();
         }
-        return c;
+        return dtoList;
     }
     
-    public List<Company> getAllCompanies() {
+    public List<CompanyDTO> getAllCompanies() {
         EntityManager em = emf.createEntityManager();
         List<Company> c = null;
+        List<CompanyDTO> dtoList = new ArrayList();
         try {
         em.getTransaction().begin();
         Query query = em.createQuery("Select p from Company p");
@@ -58,7 +65,11 @@ public class FacadeCompany {
         } finally {
             em.close();
         }
-        return c;
+        for (Company company : c) {
+            CompanyDTO cDTO = new CompanyDTO(company);
+            dtoList.add(cDTO);
+        }
+        return dtoList;
     }
     
     public Company createCompany(String name, String desc, int cvr, int empNum, int marketValue) {

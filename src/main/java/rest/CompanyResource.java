@@ -13,7 +13,7 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-@Path("Company")
+@Path("company")
 public class CompanyResource {
     private static FacadeCompany f = new FacadeCompany(Persistence.createEntityManagerFactory("courseassignment"));
     Gson gson = new GsonBuilder().setPrettyPrinting().create();

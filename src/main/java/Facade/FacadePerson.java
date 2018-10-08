@@ -39,7 +39,7 @@ public class FacadePerson {
         Person p = null;
         try {
             em.getTransaction().begin();
-            Query query = em.createQuery("");
+            Query query = em.createQuery("Select ie From InfoEntity ie INNER JOIN ie.phones p where p.number = :phoneNumber");
             query.setParameter("phoneNumber", phoneNumber);
             p = (Person) query.getSingleResult();
             em.getTransaction().commit();
@@ -56,7 +56,7 @@ public class FacadePerson {
         List<PersonDTO> listDTO = new ArrayList();
         try {
             em.getTransaction().begin();
-            Query query = em.createQuery("Select p from Person p Where p.hobbier.name = :hobby");
+            Query query = em.createQuery("Select p From Person p INNER JOIN p.hobbier h Where h.name = :hobby");
             query.setParameter("hobby", hobby);
             p = query.getResultList();
             em.getTransaction().commit();
