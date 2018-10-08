@@ -40,7 +40,7 @@ public class FacadePerson {
         Person p = null;
         try {
         em.getTransaction().begin();
-        Query query = em.createQuery("Select p from InfoEntity ie Where Type(ie) = Person AND p.phones.number = :phoneNumber");
+        Query query = em.createQuery("Select ie from InfoEntity ie Where Type(ie) = Person AND ie.phones.number = :phoneNumber");
         query.setParameter("phoneNumber", phoneNumber);
         p = (Person) query.getSingleResult();
         em.getTransaction().commit();
@@ -59,7 +59,7 @@ public class FacadePerson {
         List<PersonDTO> listDTO = new ArrayList();
         try {
         em.getTransaction().begin();
-        Query query = em.createQuery("Select p from InfoEntity ie Where Type(ie) = Person AND p.hobbier.name = :hobby");
+        Query query = em.createQuery("Select p from Person p Where p.hobbier.name = :hobby");
         query.setParameter("hobby", hobby);
         p = query.getResultList();
         em.getTransaction().commit();
@@ -98,7 +98,7 @@ public class FacadePerson {
         int hobbySize = 0;
         try {
         em.getTransaction().begin();
-        Query query = em.createQuery("Select p from InfoEntity ie Where Type(ie) = Person AND p.hobbier.name = :hobby");
+        Query query = em.createQuery("Select p from Person p Where p.hobbier.name = :hobby");
         query.setParameter("hobby", hobby);
         hobbySize = query.getResultList().size();
         em.getTransaction().commit();
