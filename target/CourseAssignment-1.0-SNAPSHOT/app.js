@@ -17,6 +17,7 @@ document.getElementById("search").addEventListener("click", function (){
     //console.log(choise);
     fetchGeneral('http://localhost:8084/CourseAssignment/api/' + choise, json => {
 	console.log(json);
+        document.getElementById("fetcheddata").innerHTML = "<h1>" json[0].id "</h1>";
 });
     
 });
