@@ -18,7 +18,7 @@ input[type=text], select {
     box-sizing: border-box;
 }
 
-input[type=submit] {
+input[type=button] {
     
     background-color: #C9A665;
     color: white;
@@ -31,6 +31,17 @@ input[type=submit] {
 
 input[type=submit]:hover {
     background-color:  #FFD700;
+}
+
+table {
+     width: 100%;
+    border-collapse: collapse;
+    color: #00ff00;
+}
+
+table, th, td {
+    border: 1px solid black;
+    color: #00ff00;
 }
 
 
