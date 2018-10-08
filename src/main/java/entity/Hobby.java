@@ -1,12 +1,10 @@
 package entity;
 
 import java.io.Serializable;
-import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 
 @Entity
 public class Hobby implements Serializable {
@@ -18,9 +16,6 @@ public class Hobby implements Serializable {
     
     private String name;
     private String description;
-    
-    @ManyToMany(mappedBy = "hobbier")
-    private List<Person> persons;
 
     public Hobby() {
     }
@@ -33,14 +28,6 @@ public class Hobby implements Serializable {
 
     public Long getId() {
         return id;
-    }
-
-    public List<Person> getPersons() {
-        return persons;
-    }
-
-    public void setPersons(List<Person> persons) {
-        this.persons = persons;
     }
 
     public void setId(Long id) {
@@ -87,7 +74,7 @@ public class Hobby implements Serializable {
 
     @Override
     public String toString() {
-        return "Hobby: " + "id: " + id + ", name: " + name + ", description: " + description + ", persons: " + persons;
+        return "Hobby{" + "id=" + id + ", name=" + name + ", description=" + description + '}';
     }
 
     

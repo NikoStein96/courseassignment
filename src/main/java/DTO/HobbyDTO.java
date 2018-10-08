@@ -14,9 +14,6 @@ public class HobbyDTO {
         this.id = hobby.getId();
         this.name = hobby.getName();
         this.description = hobby.getDescription();
-        for (Person o : hobby.getPersons()) {
-            this.persons = o.toString();
-        }
     }
 
     public HobbyDTO(long id, String name, String description, String persons) {
